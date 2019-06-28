@@ -1,0 +1,48 @@
+
+One thing we didn't actually mention in the previous video is that we currently only have global styles in place. 
+This means that they're going to be applied on all screen sizes ranging from mobile to desktop. 
+And we'll fix that now in this lab. 
+*************
+Now let's target the column class. We want to float those columns to the left, so we set the float property to the left. 
+Let's save it go to the app and refresh. Now the columns are above each other, but what we would like to do is position 
+them beside each other at a resolution above 768 pixels.
+***************
+And to do this let's use a media rule. We'll apply the two column classes - column-60 and column-40 that we created earlier. 
+So let's set the break point to 768px.Type @media. Use the min-width - because this is the mobile first approach as opposed to 
+max-width which is the desktop first approach
+Set the column-60 width to 60% of the screen and column-40 will take up the remaining 40%.
+***************
+Go to index.html and we can see here the two classes we created earlier. Refresh the page and now above 768 pixels the columns 
+will be positioned horizontally beside each other. 
+
+As you can see here when we inspect the elements we have these new properties set. Close developer tools and it will show you 
+that on a desktop size the layout will have two adjacent columns. But it looks like these paragraphs are poorly aligned, so we 
+need to set the margin.  Let's go to our CSS file and just set the margin on the section-paragraph class. 
+
+This is also part of the global styles - it will be applied on all devices. Save our CSS. Refresh, and we can now see that there's 
+a balancing space between the left edge of the browser and also between the paragraphs.
+*************
+
+Let's play with the window size now. Let's drag it below 768px. As you can see the columns are above each other as they should be at 
+this size. We can view this on a Galaxy S5 for example, in portrait mode and they're still above each other.
+
+
+Looks like we have a problem - the text is too far down the page. It should be in the middle of the section. To fix this we will wrap 
+the article and aside elements in a new container and set the top of the property to that container instead.
+********************
+So let's create a div with a class called vcenter that will wrap the article and the aside elements. Let's do some formatting. Then let's 
+go to our CSS file and replace these two with the vCenter class because they're now contained within it. Save our CSS. Go to the page. 
+Refresh and let's see what happens.
+
+It still doesn't look quite right. That's because of the float on the column class. We should remove it - well we should move it.
+So let's go back to the CSS file and move the float from the column class into our trigger - our breakpoint. There - it looks much better.
+**************
+Let's pause here for a moment. We've wrapped the content in this section into a new div that has a class of vcenter. We did that because when using
+the transformation properties and position and top offset, it won't work with two elements. It works for one element because it calculates the size
+of one element. It can't calculate the size of two elements together that's why we needed to wrap it into one element. 
+****************
+The next thing we did was to remove the float from the global column class and added to the 768 pixel media query and then everything worked well.
+And there you have it - a basic introduction to media queries and responsive design. This new skill will act as a tool for your labs, challenges
+and projects as you progress through the program.
+
+   

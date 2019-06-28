@@ -1,0 +1,67 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    /*To apply text opacity without apllying to background also for all child elements use color rgba syntax*/
+    color: rgba( 255, 255, 255, 0.8); 
+    
+    
+}
+
+.main {
+    height: 100%;
+
+}
+.header {
+    position: fixed; /* header will be fixed with other content foating under it*/
+    top: 0;
+    left: 0;
+    right:0;
+    background-color: #c8a2c8; /* Lilac */
+    padding: 15px 25px;
+    }
+
+.section {
+    background-color: #000080; /* Navy */
+    height: 100%; 
+    /* To Colour a given element for the entire page you must set the height
+    element and it's parent elements to 100%.*/  
+    /*In this case it's .main; body & html*/ /* Note css body, html syntax */
+    /*To remove padding the margin of the body,html must be set to 0*/
+ 
+}
+
+
+.vcenter {
+    /* to align text vertically to the centre us position relative syntax with
+    top and transform, transltaeY variables setting them to 50% & -50% respectively.
+    This will always     align text/object in the centre vertically regardless of device*/
+    
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+
+.section-paragraph {
+    font-size: 1em; /* this sets fint size to default */
+    
+}
+
+.column {
+	float: left; /* allows columns to float beside one another */
+}
+
+.footer {
+    background-color: #4a4a4f; /* Charcoal */
+    padding: 15px;
+}
+
+/* sets responsive design such that paragraphs are displayed differntly for tablet/desktop & mobile */
+@media (min-width: 768px) {
+	.column-60 {width:60%;} /*sets the width of the column-60 class to 60% of avaliable space*/
+	.column-40 {width:40%;} /*sets the width of the column-40 class to 40% of avaliable space*/
+	.section {
+	    background-color: #bada55; /* green */
+	}
+	
+}
